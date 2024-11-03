@@ -1,10 +1,13 @@
-package entity 
- 
-type Came struct{
-	ID uint 
-	CategoryID unit 
+package entity
+
+import "time"
+
+type Game struct {
+	ID          uint
+	CategoryID  uint
 	QuestionIDs []uint
-	Players []Players
+	PlayerIDs   []uint
+	StartTime   time.Time
 }
 
 type Player struct {

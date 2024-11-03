@@ -1,7 +1,7 @@
 package entity
 
-type Category struct {
+type User struct {
 	ID          uint
+	Phonenumber string
 	Name        string
-	Description string
 }
