@@ -9,10 +9,10 @@ import (
 )
 
 type MySQLDB struct {
-	db sql.DB
+	db *sql.DB
 }
 
-func new() MySQLDB {
+func New() *MySQLDB {
 	db, err := sql.Open("mysql", "gameapp:gameappt0lk2o20@(localhost:3308)/gameapp_db")
 	if err != nil {
 		panic(fmt.Errorf("can't open mysql db: %v", err))

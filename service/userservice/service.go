@@ -24,6 +24,10 @@ type RegisterResponse struct {
 	User entity.User
 }
 
+func New(repo Repository) Service {
+	return Service{repo: repo}
+}
+
 func (s Service) Register(req RegisterRequest) (RegisterResponse, error) {
 	if !phonenumber.IsValid(req.PhoneNumber) {
 		return RegisterResponse{}, fmt.Errorf("phone number is not valid")
